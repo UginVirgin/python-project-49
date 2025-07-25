@@ -4,7 +4,7 @@ from ..cli import welcome_user
 from .brain_games import greet
 
 def game_rules():   
-    print("Find the greatest common divisor of given numbers.")
+    print("What number is missing in the progression?")
 
 def currentElement():
     currentElement = start + index * step
@@ -20,8 +20,8 @@ def questions(name):
 
     for q in range(total_questions):
         count = 10
-        start = random.randint(1, 100)
-        step = random.randint(1, 100)
+        start = random.randint(1, 10)
+        step = random.randint(1, 10)
 
         progression = [start + i * step for i in range(count)]
 
@@ -30,7 +30,15 @@ def questions(name):
 
         progression[index_to_replace] = '...'
 
-        answer = input(f"Question: {progression} ")
+        answer_str = input(f"Question: {progression} ")
+
+        # пытаемся преобразовать ответ в число
+        try:
+            answer = int(answer_str)
+        except ValueError:
+            print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
+            continue
+
         correct_answer = replaced_number
 
         if correct_answer == answer:

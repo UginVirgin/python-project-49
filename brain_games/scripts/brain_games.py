@@ -2,7 +2,7 @@ from ..cli import welcome_user
 
 
 def greet():
-    print('Welcome to the brain Games!')
+    print('Welcome to the Brain Games!')
 
 def main():
     greet()

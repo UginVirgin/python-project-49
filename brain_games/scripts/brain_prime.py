@@ -4,21 +4,21 @@ from ..cli import welcome_user
 from .brain_games import greet
 
 def game_rules():   
-    print("Find the greatest common divisor of given numbers.")
+    print("Answer \"yes\" if given number is prime. Otherwise answer \"no\".")
 
 def is_prime(num):
     if num <= 1:
-        return False
+        return "yes"
     if num == 2:
-        return True
+        return "no"
     if num % 2 == 0:
-        return False
+        return "no"
     # Проверяем делимость только до квадратного корня из n
     sqrt_n = int(num ** 0.5) + 1
     for i in range(3, sqrt_n, 2):
         if num % i == 0:
-            return False
-    return True
+            return "no"
+    return "no"
 
 
 #переменная вынесена в глобальную область видимости для использования в функции last()

@@ -21,10 +21,18 @@ def questions(name):
     total_questions = 3
 
     for q in range(total_questions):
-        number1 = random.randint(1,100)
-        number2 = random.randint(1,100)
+        number1 = random.randint(1,20)
+        number2 = random.randint(1,50)
 
-        answer = input(f"Question: {number1} {number2} ")
+        answer_str = input(f"Question: {number1} {number2} ")
+
+        # пытаемся преобразовать ответ в число
+        try:
+            answer = int(answer_str)
+        except ValueError:
+            print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
+            continue
+
         correct_answer = gcd(number1, number2)
 
         if correct_answer == answer:

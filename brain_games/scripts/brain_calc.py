@@ -3,39 +3,45 @@ import random
 from ..cli import welcome_user
 from .brain_games import greet
 
-def game_rules():   
+def game_rules():
     print("What is the result of the expression?")
 
 def choice_operator():
-    operators = ["+","-","*"]
-    operator = random.choice(operators)
-    return operator
+    operators = ["+", "-", "*"]
+    return random.choice(operators)
 
-
-
-#переменная вынесена в глобальную область видимости для использования в функции last()
+# переменная для подсчета правильных ответов
 count_correct_answers = 0
-
 
 def questions(name):
     global count_correct_answers
     count_correct_answers = 0
     total_questions = 3
 
-    for q in range(total_questions):
-        number1 = random.randint(1,100)
-        number2 = random.randint(1,100)
-        answer = input(f"Question: {number1} {choice_operator} {number2} ")
-        operator = choice_operator()
-        correct_answer = eval(f'{number1} {operator} { number2}')
+    for _ in range(total_questions):
+        number1 = random.randint(1, 100)
+        number2 = random.randint(1, 100)
+        operator = choice_operator()  # выбираем оператор один раз для каждого вопроса
 
-        if correct_answer == answer:
+        # выводим вопрос
+        print(f"Question: {number1} {operator} {number2}")
+        answer_str = input("Your answer: ")
+
+        # пытаемся преобразовать ответ в число
+        try:
+            answer = int(answer_str)
+        except ValueError:
+            print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
+            continue
+
+        # вычисляем правильный ответ
+        correct_answer = eval(f'{number1} {operator} {number2}')
+
+        if answer == correct_answer:
             print("Correct!")
             count_correct_answers += 1
-        elif correct_answer != answer:
-            print(f"\"{answer}\" is wrong answer ;(. Correct answer was \"{correct_answer}\". Let's try again, {name}")
-
-    return count_correct_answers
+        else:
+            print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
 
 def last(name):
     if count_correct_answers == 3:
@@ -52,10 +58,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
