@@ -27,3 +27,6 @@ package-install:
 
 lint:
 	uv run ruff check brain_games
+
+rmcache:
+	find . -name "__pycache__" -exec rm -rf {} +

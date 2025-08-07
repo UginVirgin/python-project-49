@@ -1,3 +1,5 @@
 # Virtual environmets
-.venv
+.venv/
 __pycache__/
+TODO.md
+.ruff_cache/

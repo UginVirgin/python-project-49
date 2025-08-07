@@ -9,13 +9,6 @@ dependencies = [
     "prompt>=0.4.1",
 ]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["brain_games"]
-
 [dependency-groups]
 dev = [
     "ruff>=0.12.4",
@@ -30,10 +23,6 @@ brain-progression = "brain_games.scripts.brain_progression:main"
 brain-prime = "brain_games.scripts.brain_prime:main"
 
 
-
-
-
-
 [tool.ruff]
 line-length = 80
 
@@ -44,3 +33,10 @@ line-length = 80
 [lint]
 preview = true
 select = ["E", "F", "I", "C90"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["brain_games"]

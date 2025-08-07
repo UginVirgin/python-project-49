@@ -1,3 +1,6 @@
+from prompt import string
+
+
 name = None
 
 def welcome_user():
@@ -5,3 +8,4 @@ def welcome_user():
     name = input("Введите свое имя: ")
     print(f"Приятно познакомиться, {name}")
     return name
+#необходимо использовать библиотеку prompt
