@@ -1,11 +1,8 @@
-from prompt import string
-
-
 name = None
 
 def welcome_user():
     global name
-    name = input("Введите свое имя: ")
-    print(f"Приятно познакомиться, {name}")
+    name = input("May I have your name? ")
+    print(f"Hello, {name}")
     return name
 #необходимо использовать библиотеку prompt
