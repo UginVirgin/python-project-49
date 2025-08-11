@@ -4,7 +4,7 @@ MIN_NUMBER = 1
 MAX_NUMBER = 100
 
 def game_rules():   
-    input("Answer \"yes\" if the number is even, otherwise answer \"no\".")
+    print("Answer \"yes\" if the number is even, otherwise answer \"no\".")
 
 def game():
     number = random.randint(MIN_NUMBER, MAX_NUMBER)
