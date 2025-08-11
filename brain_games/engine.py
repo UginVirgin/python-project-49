@@ -2,7 +2,7 @@ from brain_games.cli import welcome_user
 
 
 def game_engine(game, games_rules):
-    welcome_user()
+    name = welcome_user()
     games_rules()
 
     count_correct_answers = 0
