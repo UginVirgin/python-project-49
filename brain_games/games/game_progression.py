@@ -16,11 +16,13 @@ def game():
     progression = [start + i * step for i in range(count)]
     index_to_replace = random.randint(0, count - 1)
     replaced_number = progression[index_to_replace]
-    progression[index_to_replace] = '...'
-    answer_str = input(f"Question: {progression} ")
+    progression_with_hole = progression.copy()
+    progression_with_hole[index_to_replace] = '..'
+
+    answer = input('Question: ' + ' '.join(str(x) for x in progression_with_hole) + " ")
 
     try:
-        answer = int(answer_str)
+        answer = int(answer)
     except ValueError:
         print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
 
