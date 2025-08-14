@@ -8,7 +8,6 @@ def main():
     game_engine(game, game_rules)
 
 
-
 if __name__ == "__main__":
     main()
 

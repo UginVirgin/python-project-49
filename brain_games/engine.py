@@ -10,6 +10,7 @@ def game_engine(game, games_rules):
 
     for _ in range(TOTAL_QUESTIONS):
         answer, correct_answer = game()
+
         if correct_answer == answer:
             print("Correct!")
             count_correct_answers += 1

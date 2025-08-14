@@ -4,10 +4,8 @@ from brain_games.games.game_progression import (
 )
 
 
-
 def main():
     game_engine(game, game_rules)
-
 
 
 if __name__ == "__main__":
