@@ -19,12 +19,18 @@ def game():
     progression_with_hole = progression.copy()
     progression_with_hole[index_to_replace] = '..'
 
-    answer = input('Question: ' + ' '.join(str(x) for x in progression_with_hole) + " ")
+    answer = input(
+        'Question: ' + ' '.join(str(x) for x in progression_with_hole) + " "
+        )
     correct_answer = replaced_number
 
     try:
-        answer = int(answer)    
+        answer = int(answer)
     except ValueError:
-        print(f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". Let\'s try again, {name}')
+        print(
+            f'"{answer}" is wrong answer ;(. '
+            f'Correct answer was "{correct_answer}". '
+            f"Let's try again, {name}"
+        )
 
     return answer, correct_answer

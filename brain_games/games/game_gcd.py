@@ -1,5 +1,6 @@
 import random
 
+
 def game_rules():   
     print("Find the greatest common divisor of given numbers.")
 
@@ -20,7 +21,8 @@ def game():
         answer = int(answer_str)
     except ValueError:
         print(
-            f'"{answer}" is wrong answer ;(. Correct answer was "{correct_answer}". '
+            f'"{answer}" is wrong answer ;(. '
+            f'Correct answer was "{correct_answer}". '
             f"Let's try again, {name}!"
             )
     

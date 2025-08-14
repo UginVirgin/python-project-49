@@ -3,6 +3,7 @@ import random
 MIN_NUMBER = 1
 MAX_NUMBER = 100
 
+
 def game_rules():
     print("What is the result of the expression?")
 
