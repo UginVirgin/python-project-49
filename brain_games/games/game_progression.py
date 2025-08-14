@@ -8,7 +8,7 @@ def game_rules():
     print("What number is missing in the progression?")
 
 
-def game(name):
+def game():
     count = 10
     start = random.randint(MIN_NUMBER, MAX_NUMBER)
     step = random.randint(MIN_NUMBER, MAX_NUMBER)
