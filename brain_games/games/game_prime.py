@@ -17,15 +17,7 @@ def game():
 
 
 def is_prime(num):
-    if num <= 1:
-        return "yes"
-    if num == 2:
-        return "no"
-    if num % 2 == 0:
-        return "no"
-    # Проверяем делимость только до квадратного корня из n
-    sqrt_n = int(num ** 0.5) + 1
-    for i in range(3, sqrt_n, 2):
+    for i in range(2, (num//2)+1):
         if num % i == 0:
             return "no"
-    return "no"
+    return "yes"
