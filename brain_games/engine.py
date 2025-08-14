@@ -14,8 +14,12 @@ def game_engine(game, games_rules):
         if correct_answer == answer:
             print("Correct!")
             count_correct_answers += 1
-        elif correct_answer != answer:
-            print(f"\"{answer}\" is wrong answer ;(. Correct answer was \"{correct_answer}\". \nLet's try again, {name}!")
+        elif correct_answer != answer:              
+            print(
+                f'"{answer}" is wrong answer ;(. '
+                f'Correct answer was "{correct_answer}". '
+                f"\nLet's try again, {name}!"
+                )
             break
     else:
         print(f"Congratulations, {name}!")
