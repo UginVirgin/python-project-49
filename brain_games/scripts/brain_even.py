@@ -3,6 +3,7 @@ from brain_games.games.game_even import (
     game_rules, game
 )
 
+
 def main():
     game_engine(game, game_rules)
 

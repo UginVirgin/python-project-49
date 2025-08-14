@@ -16,7 +16,8 @@ def game():
     number2 = random.randint(1, 50)
 
     answer_str = input(f"Question: {number1} {number2} ")
-
+    correct_answer = gcd(number1, number2)
+    
     try:
         answer = int(answer_str)
     except ValueError:
@@ -25,7 +26,5 @@ def game():
             f'Correct answer was "{correct_answer}". '
             f"Let's try again, {name}!"
             )
-    
-    correct_answer = gcd(number1, number2)
     
     return answer, correct_answer
