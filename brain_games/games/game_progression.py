@@ -8,7 +8,7 @@ def game_rules():
     print("What number is missing in the progression?")
 
 
-def game():
+def game(name):
     count = 10
     start = random.randint(MIN_NUMBER, MAX_NUMBER)
     step = random.randint(MIN_NUMBER, MAX_NUMBER)
@@ -19,18 +19,14 @@ def game():
     progression_with_hole = progression.copy()
     progression_with_hole[index_to_replace] = '..'
 
-    answer = input(
+    answer_str = input(
         'Question: ' + ' '.join(str(x) for x in progression_with_hole) + " "
         )
     correct_answer = replaced_number
 
     try:
-        answer = int(answer)
+        answer = int(answer_str)
     except ValueError:
-        print(
-            f'"{answer}" is wrong answer ;(. '
-            f'Correct answer was "{correct_answer}". '
-            f"Let's try again, {name}"
-        )
+        answer = answer_str
 
     return answer, correct_answer

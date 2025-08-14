@@ -20,11 +20,7 @@ def game():
     try:
         answer = int(answer_str)
     except ValueError:
-        print(
-            f'"{answer}" is wrong answer ;(. '
-            f'Correct answer was "{correct_answer}". '
-            f"Let's try again, {name}"
-            )
+        answer = answer_str
 
     return answer, correct_answer
 
